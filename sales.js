@@ -25,3 +25,19 @@ const companySalesData = [
 const calculateSalesTax = function(salesData, taxRates) {
   // Implement your code here
 }
+
+
+/* Expected Results:
+
+{
+  Telus: {
+    totalSales: 1300
+    totalTaxes: 144
+  },
+  Bombardier: {
+    totalSales: 800,
+    totalTaxes: 40
+  }
+}
+
+*/
