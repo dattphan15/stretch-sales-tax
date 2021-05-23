@@ -28,12 +28,12 @@ const calculateSalesTax = function(salesData, taxRates) {
   let results = {};
 
   for (company in salesData) {
-    let totalSales = companySalesData[company].sales.reduce(function(a ,b) {
+    let totalSales = salesData[company].sales.reduce(function(a ,b) {
       return a + b;
     });
     
     let afterTax = totalSales * taxRates[salesData[company].province];
-    let companyName = companySalesData[company].name;
+    let companyName = salesData[company].name;
     
     if (results.hasOwnProperty(companyName)) {
       results[companyName].totalSales += totalSales;
