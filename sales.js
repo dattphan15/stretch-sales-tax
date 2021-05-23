@@ -23,6 +23,23 @@ const companySalesData = [
 ];
 
 
+
+/* Expected Results:
+
+{
+  Telus: {
+    totalSales: 1300
+    totalTaxes: 144
+  },
+  Bombardier: {
+    totalSales: 800,
+    totalTaxes: 40
+  }
+}
+
+*/
+
+
 const calculateSalesTax = function(salesData, taxRates) {
   // Implement your code here
   let results = {};
@@ -49,19 +66,3 @@ const calculateSalesTax = function(salesData, taxRates) {
 }
 
 console.log(calculateSalesTax(companySalesData, salesTaxRates));
-
-
-/* Expected Results:
-
-{
-  Telus: {
-    totalSales: 1300
-    totalTaxes: 144
-  },
-  Bombardier: {
-    totalSales: 800,
-    totalTaxes: 40
-  }
-}
-
-*/
