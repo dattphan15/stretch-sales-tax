@@ -22,9 +22,33 @@ const companySalesData = [
   }
 ];
 
+
 const calculateSalesTax = function(salesData, taxRates) {
   // Implement your code here
+  let results = {};
+
+  for (company in salesData) {
+    let totalSales = companySalesData[company].sales.reduce(function(a ,b) {
+      return a + b;
+    });
+    
+    let afterTax = totalSales * taxRates[salesData[company].province];
+    let companyName = companySalesData[company].name;
+    
+    if (results.hasOwnProperty(companyName)) {
+      results[companyName].totalSales += totalSales;
+      results[companyName].totalTaxes += afterTax;
+    } else {
+      results[companyName] = {
+        totalSales: totalSales,
+        totalTaxes: afterTax
+      }
+    }
+  }
+  return results;
 }
+
+console.log(calculateSalesTax(companySalesData, salesTaxRates));
 
 
 /* Expected Results:
