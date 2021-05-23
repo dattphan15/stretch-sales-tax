@@ -45,7 +45,7 @@ const calculateSalesTax = function(salesData, taxRates) {
   let results = {};
 
   for (company in salesData) {
-    let totalSales = salesData[company].sales.reduce(function(a ,b) {
+    let totalSales = salesData[company].sales.reduce(function(a, b) {
       return a + b;
     });
     
